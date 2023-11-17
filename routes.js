@@ -1,8 +1,8 @@
 import express from 'express';
-import { prioritizer } from './controllers.js';
+import { imageProcess } from './controllers.js';
 
 const trafficRouter = express.Router();
 
-trafficRouter.get('/traffic', prioritizer);
+trafficRouter.post('/traffic', imageProcess);
 
 export default trafficRouter;
