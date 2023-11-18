@@ -1,5 +1,9 @@
 import axios from 'axios';
 
+
+export const tes = (req, res) => {
+    return res.status(200).send("hello, world!");
+};
 export const imageProcess = async (req, res) => {
     try {
         // const { imageData } = req.body.image; 
