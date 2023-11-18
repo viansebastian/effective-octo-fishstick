@@ -1,9 +1,11 @@
 import express from 'express';
-import { imageProcess, tes } from './controllers.js';
+import { imageProcessUpload, imageProcessURL, tes } from './controllers.js';
 
 const trafficRouter = express.Router();
 
-trafficRouter.post('/traffic', imageProcess);
+// trafficRouter.post('/traffic-upload', imageProcessUpload);
+trafficRouter.post('/traffic-url', imageProcessURL);
+
 trafficRouter.get('/', tes);
 
 export default trafficRouter;
