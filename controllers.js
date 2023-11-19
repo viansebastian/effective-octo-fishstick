@@ -36,12 +36,16 @@ export const imageProcessUpload = async (req, res) => {
 
 export const imageProcessURL = async (req, res) => {
     try {
-        // const imageData  = req.body.image; 
-        const { imageLink } = req.body; 
+        // console.log(req.body);
+
+        const imageLink = req.body.imageLink; 
+
+        // console.log(imageLink);
 
         const processedImage = await axios.post('http://127.0.0.1:8080/process-image-url', { image_link : imageLink });
 
         const count = processedImage.data.count;
+        console.log(count);
 
         const traffic = prioritizer(count)
         const trafficCountdown = traffic.countdown;
